@@ -5,3 +5,4 @@ pandas==2.1.4
 seaborn==0.13.0
 streamlit==1.30.0
 folium==0.14.0
+streamlit_folium==0.16.0
