@@ -39,7 +39,7 @@ if not filtered_df.empty:
     plt.figure(figsize=(12, 6))
     sns.lineplot(data=filtered_df, x="year", y="PM2.5", hue="station", marker="o")
     plt.xlabel("Tahun")
-    plt.ylabel("Konsentrasi PM2.5 (µg/m³)")
+    plt.ylabel("Konsentrasi PM2.5")
     plt.title("Tren PM2.5 dari 2013-2017")
     st.pyplot(plt)
 
@@ -60,21 +60,21 @@ if not filtered_df.empty:
     axes[0].set_xticklabels(axes[0].get_xticklabels(), rotation=45)
     axes[0].set_title("Distribusi PM2.5 berdasarkan Suhu")
     axes[0].set_xlabel("Suhu (°C)")
-    axes[0].set_ylabel("PM2.5 (µg/m³)")
+    axes[0].set_ylabel("PM2.5")
 
     # Box plot PM2.5 vs Tekanan Udara (PRES)
     sns.boxplot(data=filtered_df, x=pd.cut(filtered_df["PRES"], bins=10), y="PM2.5", ax=axes[1])
     axes[1].set_xticklabels(axes[1].get_xticklabels(), rotation=45)
     axes[1].set_title("Distribusi PM2.5 berdasarkan Tekanan Udara")
-    axes[1].set_xlabel("Tekanan Udara (hPa)")
-    axes[1].set_ylabel("PM2.5 (µg/m³)")
+    axes[1].set_xlabel("Tekanan Udara")
+    axes[1].set_ylabel("PM2.5")
 
     # Box plot PM2.5 vs Kelembapan (DEWP)
     sns.boxplot(data=filtered_df, x=pd.cut(filtered_df["DEWP"], bins=10), y="PM2.5", ax=axes[2])
     axes[2].set_xticklabels(axes[2].get_xticklabels(), rotation=45)
     axes[2].set_title("Distribusi PM2.5 berdasarkan Kelembapan")
-    axes[2].set_xlabel("Kelembapan (°C)")
-    axes[2].set_ylabel("PM2.5 (µg/m³)")
+    axes[2].set_xlabel("Kelembapan")
+    axes[2].set_ylabel("PM2.5")
 
     st.pyplot(fig)
 
