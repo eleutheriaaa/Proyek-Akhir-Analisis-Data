@@ -8,7 +8,7 @@ from streamlit_folium import folium_static
 sns.set(style='dark')
 
 # Load data
-all_df = pd.read_csv("all_data.csv")
+all_df = pd.read_csv("Dashboard/all_data.csv")
 
 # Konversi datetime
 all_df["datetime"] = pd.to_datetime(all_df[["year", "month", "day", "hour"]])
